@@ -16,7 +16,7 @@
     --font-color:rgb(2, 17, 22);
     --head-color: rgd(145, 65, 20);
     /** layout variables **/
-    --page-top-position: 85%;
+    --page-top-position: 85vh;
     --page-width: 30%;
     --bottom-bar-height: 15vh;
     --bottom-bar-color: hsla(27,43%,55%,1);
@@ -25,6 +25,7 @@
 /* 01 Color */
 body{
   background-color: var(--body-color);
+
 }
 #zen-intro{
     background-color: var(--page-color);
@@ -35,6 +36,9 @@ body{
 }
 .sidebar {
     background-color: var(--sidebar-color);
+    h3 {text-shadow: 0.2em 0.5em 0.1em #600,
+        -0.3em 0.1em 0.1em #060,
+        0.4em -0.3em 0.1em #006}
 }
 h1{
     /* finish it */
@@ -42,23 +46,32 @@ h1{
 }
 
 /*02 Layout */
-div.explanation, div.requirements, div.benefits, div.participation{
+div.explanation , div.requirements, div.benefits , div.participation {
     position: fixed;
+    /*margin-top: -5%;*/
     width: var(--page-width);
     top: var(--page-top-position);
     background-image: url(../img/newspaper3.jpg);
 }
 div.explanation{
-    left:0%;
+    left:1%;
 }
-
+div.requirements{
+    left:18%;
+}
+div.benefits{
+    left:35%;
+}
+div.participation{
+    left:52%;
+}
 /* FINISH IT FOR THE REQUIRMENTS/BENEFITS/PARTICIPATION */
 
 aside.sidebar{
     position: absolute;
     top: 20%;
     right: 0;
-    /* bottom: 0; */
+    bottom: 0; 
     /*adjust width/height */
     width: 20%;
     height: 100%;
@@ -69,8 +82,13 @@ section.intro{
     position: fixed;
     bottom: 5%;
     left: 30%;
+    width: var(--page-width);
     height: 80%;
     background-image:url(../img/newspaper1.jpg);
+    padding:2%;
+    border: 2px dashed rgb(39, 34, 34);
+    margin-left: 10px;
+    text-indent: 1px; /* -9999px
     /* left: 0;
     /* top: 40%;
     /* bottom: 30% */
@@ -82,5 +100,114 @@ div.extra2{
     left: 0;
     width: 100%;
     height: var(--bottom-bar-height);
-    background-color:
+    background-color: var(--bottom-bar-color);
 }
+div.extra1{
+    top: 20%;
+    right: 0;
+    bottom: 0; 
+    width: 20%;
+    height: 100%;
+    background-image: url(.../img/newspaper2.jpg);
+    z-index: -1;
+}
+/* create tabs for the folder */
+div.explanation h3, div.requirements h3,div.benefits h3, div.participation h3{
+    margin-top: -30px;
+    width: 12vw;
+    background-color: bisque;
+    border-top-left-radius: 40px;
+    border-top: solid rgb(238, 255, 0) 1px;
+    padding-right: 50px;
+    border-top-right-radius: 20px;
+
+}
+/**03: Typography **/
+@font-face {
+    font-family: 'myfont' ;
+    src: url(../fonts/chunkfive.eot);
+}
+
+header h1{
+    font-family: 'myfont' ,sans-serif;
+    font-weight: 100;
+    font-size: 1.25em;
+    letter-spacing: normal;
+    line-height: 1em;
+}
+
+header h1{
+    font-family: 'Roboto',cursive;
+    font-weight: 100;
+    font-size: 1.25em;
+    letter-spacing: normal;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+
+#design-selectionh3{
+   visibility: hidden;
+}
+
+.design-archives{
+    display: none;
+}
+
+#design-selectionh1{
+    visibility: hidden;
+ }
+ 
+ .design-archives.h1{
+     visibility: hidden;
+ }
+/* hide the archive section/ resource section */
+/* 04, selector practice, transform, transition, .... */
+a:hover{
+    font-size: 1.5em;
+}
+
+div.explanation:active{
+    top:15vh;
+    height:90vh;
+}
+div.requirements:active{
+    top:15vh;
+    height:90vh;
+}
+div.benefits:active{
+    top:15vh;
+    height:90vh;
+}
+div.participation:active{
+    top:15vh;
+    height:90vh;
+}
+li:fir
+/* finish the active action for requirement/benefits/participation */
+/* p::first-letter{
+   font-size: 1.5em;
+   font-style: italic;
+}
+
+
+p:nth-child(2n){
+    background-color: bisque
+}
+
+p:nth-child(2n+1){
+
+}
+
+/*Border radius dor the tab
+div.explanation h3, div.requirements h3,div.benefits h3, div.participation h3{
+    border-top-left-radius: 40px;
+    padding-right: 50px;
+
+}*/
