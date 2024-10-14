@@ -1,148 +1,147 @@
 /* style file created by Yilian Zhang
-=====================================
-00: css variable
-01: color
-02: Typography
+ ======================================
+ 00: css variable
+ 01: color
+ 02: Layout
+ 03: Typography
+ 04: Transitions, Animations, and Selector practices
+ 05: Funcy stuff --Please explore yourself.
 
-=========================
-*/
+ ========================
+ */
 
-/* 00 css variable */
+ /* 00 css variable */
 :root{
-    --body-color: hsla(236, 89%, 35%, 0.8);
-    --page-color: hsla(30.32%, 88%, 0.9);
+    --body-color: hsla(359,39%,35%,0.8);
+    --page-color: hsla(30,32%,88%,0.9);
     --sidebar-color: rgb(191,164,99);
     /** font color **/
     --font-color:rgb(2, 17, 22);
-    --head-color: rgd(145, 65, 20);
     /** layout variables **/
-    --page-top-position: 85vh;
+    --page-top-position: 85%;
     --page-width: 30%;
     --bottom-bar-height: 15vh;
     --bottom-bar-color: hsla(27,43%,55%,1);
 }
 
-/* 01 Color */
-body{
-  background-color: var(--body-color);
-
-}
-#zen-intro{
+ /* 01 Color */
+ body{
+    background-color: var(--body-color);
+ }
+ #zen-intro{
     background-color: var(--page-color);
     color: var(--font-color);
-}
-#zen-supporting{
+ }
+ #zen-supporting{
     background-color: var(--page-color);
-}
-.sidebar {
+ }
+.sidebar{
     background-color: var(--sidebar-color);
-    h3 {text-shadow: 0.2em 0.5em 0.1em #600,
-        -0.3em 0.1em 0.1em #060,
-        0.4em -0.3em 0.1em #006}
 }
 h1{
     /* finish it */
-    background-color: var(--head-color);
 }
 
 /*02 Layout */
-div.explanation , div.requirements, div.benefits , div.participation {
+div.explanation, div.requirements,div.benefits,div.participation{
     position: fixed;
-    /*margin-top: -5%;*/
     width: var(--page-width);
     top: var(--page-top-position);
     background-image: url(../img/newspaper3.jpg);
+   /* transition: all 4s ease-in-out; */
+    transition: all 4s ease-in-out;
 }
+
+
 div.explanation{
     left:1%;
 }
-div.requirements{
-    left:18%;
-}
-div.benefits{
-    left:35%;
-}
-div.participation{
-    left:52%;
-}
-/* FINISH IT FOR THE REQUIRMENTS/BENEFITS/PARTICIPATION */
 
+/* finish it for requirments/benefits/participation */
+div.requirements{
+    left: 18vw;
+}
+
+div.benefits{
+    left: 36vw;
+}
+
+div.participation{
+    left: 54vw;
+}
 aside.sidebar{
     position: absolute;
-    top: 20%;
+    top:20%;
     right: 0;
-    bottom: 0; 
+    /* bottom: 0; */
     /*adjust width/height */
     width: 20%;
-    height: 100%;
+    height:100%;
 }
 
 section.intro{
     /* finish as much as can */
     position: fixed;
     bottom: 5%;
-    left: 30%;
-    width: var(--page-width);
-    height: 80%;
-    background-image:url(../img/newspaper1.jpg);
+    left:30%;
+    width: 30%;
+    height:80%;
+    background-image:url(../img/newspaper3.jpg) ;
     padding:2%;
     border: 2px dashed rgb(39, 34, 34);
     margin-left: 10px;
-    text-indent: 1px; /* -9999px
-    /* left: 0;
-    /* top: 40%;
-    /* bottom: 30% */
+    text-indent: 1px;  /* -9999px can remove the content away */
+    /*put the transform and translate here */
+    transform: rotate(-10deg) translate(-100px,0);
 }
 
 div.extra2{
     position: fixed;
-    bottom: 0;
+    bottom:0;
     left: 0;
     width: 100%;
-    height: var(--bottom-bar-height);
+    height:var(--bottom-bar-height);
     background-color: var(--bottom-bar-color);
 }
+
 div.extra1{
-    top: 20%;
-    right: 0;
-    bottom: 0; 
-    width: 20%;
-    height: 100%;
-    background-image: url(.../img/newspaper2.jpg);
+    position: fixed;
+    bottom: 5%;
+    left:20%;
+    width: 30%;
+    height:80%;
+    background-image: url(../img/newspaper2.jpg);
     z-index: -1;
+    transform: rotate(15deg) translate(200px,-100px);
 }
+
 /* create tabs for the folder */
-div.explanation h3, div.requirements h3,div.benefits h3, div.participation h3{
-    margin-top: -30px;
+div.explanation h3, div.requirements h3,div.benefits h3,div.participation h3{
+    margin-top: -5%;
     width: 12vw;
     background-color: bisque;
-    border-top-left-radius: 40px;
-    border-top: solid rgb(238, 255, 0) 1px;
-    padding-right: 50px;
-    border-top-right-radius: 20px;
-
 }
-/**03: Typography **/
+
+
+
+/**03:  Typography **/
 @font-face {
     font-family: 'myfont' ;
     src: url(../fonts/chunkfive.eot);
 }
 
 header h1{
-    font-family: 'myfont' ,sans-serif;
-    font-weight: 100;
-    font-size: 1.25em;
-    letter-spacing: normal;
-    line-height: 1em;
-}
-
-header h1{
-    font-family: 'Roboto',cursive;
+    font-family: 'myfont',sans-serif;
     font-weight: 100;
     font-size: 1.25em;
     letter-spacing: normal;
     line-height: 1em;
     text-transform: uppercase;
+}
+
+header h2{
+    /* use a different web fonts */
+    font-family: 'Ranchers',cursive;
 }
 
 a{
@@ -152,23 +151,15 @@ li{
     list-style-type: none;
 }
 
-#design-selectionh3{
-   visibility: hidden;
+#design-selection h3{
+    visibility: hidden;
 }
-
-.design-archives{
+/* hide the archive section/ resource section */
+#design-archives{
     display: none;
 }
 
-#design-selectionh1{
-    visibility: hidden;
- }
- 
- .design-archives.h1{
-     visibility: hidden;
- }
-/* hide the archive section/ resource section */
-/* 04, selector practice, transform, transition, .... */
+/* 04, selector practice , transform, transition, .... */
 a:hover{
     font-size: 1.5em;
 }
@@ -177,37 +168,67 @@ div.explanation:active{
     top:15vh;
     height:90vh;
 }
-div.requirements:active{
-    top:15vh;
-    height:90vh;
-}
-div.benefits:active{
-    top:15vh;
-    height:90vh;
-}
-div.participation:active{
-    top:15vh;
-    height:90vh;
-}
-li:fir
 /* finish the active action for requirement/benefits/participation */
-/* p::first-letter{
-   font-size: 1.5em;
-   font-style: italic;
+p::first-letter{
+    font-size: 1.5em;
+    font-style: italic;
 }
-
 
 p:nth-child(2n){
-    background-color: bisque
+    background-color: bisque;
+
 }
 
 p:nth-child(2n+1){
-
+    background-color: aquamarine;
 }
 
-/*Border radius dor the tab
-div.explanation h3, div.requirements h3,div.benefits h3, div.participation h3{
-    border-top-left-radius: 40px;
-    padding-right: 50px;
+/** Try one text shadow **/
 
-}*/
+/** Border radius for the tab**/
+div.explanation h3, div.requirements h3,div.benefits h3,div.participation h3{
+    border-top-left-radius: 20px;
+    border-top: solid red 1px;
+    padding-left: 5px;
+}
+
+/** list style image **/
+ul{
+    list-style-image: url(../img/star.png);
+}
+
+/** transform  and transition **/
+section.intro h3 ~p{
+    opacity: 1;
+    transition: all 3s ease-in-out;
+}
+
+section.intro h3:hover ~p{
+    transform: scale(0.2);
+    opacity:0;
+}
+/** Please play with those numbers */
+@keyframes backandforth{
+    from{transform: translate(-500px,0);}
+    30%{transform: translate(-300px,0);}
+    50%{transform: translate(300px,0);}
+    70%{transform: translate(500px,0);}
+    90%{transform: translate(600px,0);}
+}
+
+footer{
+    position: fixed;
+    bottom: 1vh;
+    left: 50%;
+    z-index: 4;
+    animation: 10s ease-in-out 2s alternate infinite backandforth;
+}
+
+/* 05 fun feature */
+body{
+    clip-path: circle(60% at 50vw 50vh);
+}
+
+aside.sidebar{
+    clip-path: polygon(0 0,0 60%,50% 90%, 100% 60%, 100% 0);
+}
